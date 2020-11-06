@@ -1,11 +1,15 @@
- create table ivanenko_shema.VendorID (ID int, Name varchar(40))
+ create table ivanenko_shema.VendorID (ID int, Name varchar(40))WITH (
+    DISTRIBUTION = REPLICATE
+)
 
 insert into ivanenko_shema.VendorID (ID, Name)
- values (1, 'Creative Mobile Technologies, LLC') 
+values (1, 'Creative Mobile Technologies, LLC') 
 insert into ivanenko_shema.VendorID (ID, Name) 
 values (2, 'VeriFone Inc.') 
 
-create table ivanenko_shema.RateCodeID (ID int, Name varchar(40))
+create table ivanenko_shema.RateCodeID (ID int, Name varchar(40)) WITH (
+    DISTRIBUTION = REPLICATE
+)
 
 insert into ivanenko_shema.RateCodeID (ID, Name) 
 values (1, 'Standard rate') 
@@ -20,7 +24,9 @@ insert into ivanenko_shema.RateCodeID (ID, Name)
 insert into ivanenko_shema.RateCodeID (ID, Name) 
 values (6, 'Group ride') 
 
-create table ivanenko_shema.Payment_type (ID int, Name varchar(40))
+create table ivanenko_shema.Payment_type (ID int, Name varchar(40)) WITH (
+    DISTRIBUTION = REPLICATE
+)
 
 insert into ivanenko_shema.Payment_type (ID, Name) 
 values (1, 'Credit card') 
@@ -34,5 +40,3 @@ insert into ivanenko_shema.Payment_type (ID, Name)
  values (5, 'Unknown') 
 insert into ivanenko_shema.Payment_type (ID, Name)
  values (6, 'Voided trip') 
-
-SELECT * from  ivanenko_shema.VendorID
